@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    background-color: #FFFFFF;
+} 
+
+h1 { 
+font-family: "Open Sans", sans-serif; 
+font-weight: 400; 
+}
+
+.sredina{
+text-align:center;
+font-size:50px;
+}
+
+.slika{
+text-align:center;
+margin-top:-68px;
+}
+
+.uredi{
+    list-style-type: none;
+    padding:0;
+    overflow: hidden;
+    position: relative; 
+    width: 1024px; 
+}
+
+.uredi2{
+ float:right;
+ font-size: 30px;
+ 
+}
+
+.uredi3{
+    color: white;
+    text-align:center;
+	text-decoration:none;
+    display:block;
+    width: 180px;
+    background-color: #FF1919;
+}
+
+.menu{
+ position: relative; 
+    margin:0 auto; 
+    width: 1024px;
+}
+
+.partner{
+    list-style: square url("http://spectrum.stanford.edu/images/small_arrow_icon_red.png");
+	display:table; 
+	margin:0 auto;
+}
+
+.oznaceno{
+	background-color: #4C0808;
+}
+
+.prvired{
+font-size:16pt;
+	background-color: #FF1919;
+	width=75%;
+}
+
+.ostaliredovi{
+font-family: verdana;
+	font-size:12pt;
+font-weight:normal;
+font-style: normal;
+}
+
+
