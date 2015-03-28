@@ -17,11 +17,12 @@ h1 { font-family: 'Special Elite', cursive;
  font-weight: 400; }
  
  .dodatakTekst{ font-family: 'Special Elite', cursive;
- font-weight: 14px; }
+ font-weight: 14px; 
+ margin-left:30px;}
 
 .sredina{
 text-align:center;
-font-size:50px;
+font-size:60px;
 }
 
 .slika{
@@ -103,12 +104,41 @@ top: -50px;
 	background-image: url("logo.png");
 }
 
+.kontaktt{
+	position: relative;
+
+left: 630px;
+top: -20px;
+}
+
 .dodatakNaslovnoj{
-margin:0 auto; 
+	margin:0 auto; 
     width: 1024px;
 	height: 260px;
 	width: 1000px;
 	position: relative;
 	background-repeat: no-repeat;
 	background-image: url("dodatak.png");
+}
+
+.slikaDno{
+	margin: 0 auto;
+	width: 900px;
+	position: relative;
+	margin-left:370px;
+	background-repeat: no-repeat;
+	background-image: url("slikadno.png");
+}
+
+.zatvoreno{
+
+  border: 15px solid transparent;
+    width: 1050px;
+    margin-left:120px;
+	margin-right:120px;
+  border-image: url("border.png") 30 30 stretch;
+} 
+
+.idinavrh{
+	margin-left:600px;
 }
