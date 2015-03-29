@@ -17,7 +17,7 @@ h1 { font-family: 'Special Elite', cursive;
  font-weight: 400; }
  
  .dodatakTekst{ font-family: 'Special Elite', cursive;
- font-weight: 14px; 
+ font-weight:14; 
  margin-left:30px;}
 
 .sredina{
@@ -105,10 +105,10 @@ top: -50px;
 }
 
 .kontaktt{
-	position: relative;
+	
+position:relative;
+margin-left:490px;
 
-left: 630px;
-top: -20px;
 }
 
 .dodatakNaslovnoj{
@@ -136,9 +136,32 @@ top: -20px;
     width: 1050px;
     margin-left:120px;
 	margin-right:120px;
-  border-image: url("border.png") 30 30 stretch;
+  border-image: url("test.png") 20 20 round;
+  background-color: #FFEBEB;
 } 
+
 
 .idinavrh{
 	margin-left:600px;
+}
+
+.tekstusredinu{
+	text-align:center;
+}
+
+.tekstarea{
+	width: 300px; 
+	height: 150px;
+}
+
+.hehe{
+  width:300px;   
+}
+
+.hehe1{
+  width:306px;   
+}
+
+.pomjeridesno{
+   margin-left:405px;
 }
