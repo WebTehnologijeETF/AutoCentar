@@ -165,3 +165,28 @@ margin-left:490px;
 .pomjeridesno{
    margin-left:405px;
 }
+
+.pomjeridesno1{
+   margin-left:255px;
+}
+
+.picture{
+	 
+	
+    max-width:230px;
+    max-height:140px;
+    width: auto;
+    height: auto;
+	 
+}
+
+.sugestije{
+ max-width:230px;
+ float:right;
+    max-height:140px;
+	
+}
+
+.centriraj{
+	margin-left:140px;
+}
