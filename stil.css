@@ -4,6 +4,14 @@ hr{
 border-color:red;
 }
 
+.padajuciMeni{
+	list-style-type: square;
+	text-align:left;
+	color:black;
+	border: 2px solid red; 
+	
+}
+
 .font1{
 	font-size:16px;
 	font-family: 'Fondamento', cursive;
@@ -30,16 +38,25 @@ text-align:center;
 margin-top:-68px;
 }
 
+.prikazi{
+	display:block;
+}
+
+.nemojPrikazati{
+	display:none;
+}
+
 .uredi{
-    list-style-type: none;
+    list-style-type:none;
     padding:0;
-    overflow: hidden;
+    
     position: relative; 
     width: 1024px; 
 }
 
 .uredi2{
  float:right;
+ border: 2px outset #660000;
  font-size: 30px;
  
 }
@@ -189,4 +206,20 @@ margin-left:490px;
 
 .centriraj{
 	margin-left:140px;
+}
+
+#padajuci{
+	background-color:white;
+}
+
+#oznaka{
+
+}
+
+.oznaka1{
+
+}
+
+body{
+ background-color: #D1B2C2;
 }

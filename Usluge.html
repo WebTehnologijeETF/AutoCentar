@@ -1,96 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Auto-centar</title>
-<META http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="stil.css">
+	<head>
+		<title>Auto-centar</title>
+		<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="stil.css">
+		<script src="javascript.js"></script>
+	</head>
 
-</head>
+	<body>
 
-<body>
+		<h1 class="sredina menu"> Auto-centar Sarajevo </h1>
 
-<h1 class="sredina menu"> Auto-centar Sarajevo </h1>
-
-<div class="dodatakNaslovnoj">
-</div>
-
-
-
-	<ul class="uredi">
-		
-		<li class="uredi2"><a class="uredi3" href="Partneri.html">Partneri</a></li>
-		<li class="uredi2"><a class="uredi3" href="Kontakt.html">Kontakt</a></li>
-		<li class="uredi2"><a class="uredi3 oznaceno" href="Usluge.html">Usluge</a></li>
-		<li class="uredi2"><a class="uredi3" href="Naslovna.html">Naslovna</a></li>
-		
-	</ul>
-	
-	<br>
-	<br>
-	<br>
-	
-	<div class="zatvoreno">
-	<br>
-	<p class="menu tekstusredinu">Auto centar Sarajevo nudi profesionalne usluge po najpovoljnijim cijenama u gradu. Naši radnici će se potruditi uslužiti vas u najkraćem mogućem vremenskom periodu. Centar se nalazi u blizini RTV doma i prilaz istom je jako pristupačan. Mi smo najpovoljniji, najbrži i najljubazniji.</p><br>
-	<p class="menu tekstusredinu">Sve potrebne informacije (kontakt, telefona, adresa) pronađite klikom na KONTAKT u glavnom meniju naše internetske stranice. Na sva vaša pitanja odgovaramo najbrže što je moguće, a obećavamo direktan i konkretan odgovor kroz najdalje 24 sata.</p>
-	<br>
-	<p class="partner tekstusredinu">Naš auto centar nudi sljedeće:</p>
-	<ul class="partner">
-		<li>Punjenje auto klime</li>
-		<li>Zamjena ulja</li>
-		<li>Tehnički pregled vozila</li>
-		<li>Narudžbu dijelova za vozila</li>
-		<li>Usluge naših auto mehaničara</li>
-	</ul>
-	<br>
-	
-	<p class="partner">Pogledajte trenutnu ponudu automobila:</p>
-	<table class="partner" border=1>
-	
-	<tr class="prvired">
-	 <th>Naziv</th>
-	 <th>Godina proizvodnje</th>
-	 <th>Cijena</th>
-	</tr>
-	
-	<tr>
-	 <th class="ostaliredovi">Toyota Auris</th>
-	 <th class="ostaliredovi">2008.</th>
-	 <th class="ostaliredovi">14.000 KM</th>
-	</tr>
-	
-	<tr>
-	 <th class="ostaliredovi">Golf VI</th>
-	 <th class="ostaliredovi">2012.</th>
-	 <th class="ostaliredovi">19.000 KM</th>
-	</tr>
-	
-	<tr class="ostaliredovi">
-	 <th class="ostaliredovi">Škoda Fabia</th>
-	 <th class="ostaliredovi">2005.</th>
-	 <th class="ostaliredovi">8.000 KM</th>
-	</tr>
-	
-	<tr class="ostaliredovi">
-	 <th class="ostaliredovi">Volvo</th>
-	 <th class="ostaliredovi">2002.</th>
-	 <th class="ostaliredovi">11.000 KM</th>
-	</tr>
-	
-	<tr class="ostaliredovi">
-	 <th class="ostaliredovi">Renault Karavan</th>
-	 <th class="ostaliredovi">2004.</th>
-	 <th class="ostaliredovi">7.000 KM</th>
-	</tr>
-	
-	</table>
-	<br><br>
-	</div>
+		<div class="dodatakNaslovnoj">
+		</div>
 
 
-<br>
+
+			<ul class="uredi">
+				
+				<li class="uredi2"><a class="uredi3" href="Partneri.html">Partneri</a></li>
+				<li class="uredi2"><a class="uredi3" href="Kontakt.html">Kontakt</a></li>
+				<li class="uredi2 uredi3 oznaceno" onclick="prikaziMeni()">Usluge
+				
+					<ul id="padajuci" class="nemojPrikazati padajuciMeni" onmouseout="sakrijMeni()">
+						<li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);">Ponuda</li>
+						<li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);">Cjenovnik</li>
+					</ul>
+				
+				</li>
+				<li class="uredi2"><a class="uredi3" href="Naslovna.html">Naslovna</a></li>
+				
+			</ul>
+			
+			<br>
+			<br>
+			<br>
+			<br>
+			<br><br>
+			
+			<div class="zatvoreno">
+			<br>
+			<p class="menu tekstusredinu">Auto centar Sarajevo nudi profesionalne usluge po najpovoljnijim cijenama u gradu. Naši radnici će se potruditi uslužiti vas u najkraćem mogućem vremenskom periodu. Centar se nalazi u blizini RTV doma i prilaz istom je jako pristupačan. Mi smo najpovoljniji, najbrži i najljubazniji.</p><br>
+			<p class="menu tekstusredinu">Sve potrebne informacije (kontakt, telefona, adresa) pronađite klikom na KONTAKT u glavnom meniju naše internetske stranice. Na sva vaša pitanja odgovaramo najbrže što je moguće, a obećavamo direktan i konkretan odgovor kroz najdalje 24 sata.</p>
+			<br>
+			<p class="partner tekstusredinu">Naš auto centar nudi sljedeće:</p>
+			<ul class="partner">
+				<li>Punjenje auto klime</li>
+				<li>Zamjena ulja</li>
+				<li>Tehnički pregled vozila</li>
+				<li>Narudžbu dijelova za vozila</li>
+				<li>Usluge naših auto mehaničara</li>
+			</ul>
+			<br>
+			
+			<p class="partner">Pogledajte trenutnu ponudu automobila:</p>
+			<table class="partner" border=1>
+			
+			<tr class="prvired">
+			 <th>Naziv</th>
+			 <th>Godina proizvodnje</th>
+			 <th>Cijena</th>
+			</tr>
+			
+			<tr>
+			 <th class="ostaliredovi">Toyota Auris</th>
+			 <th class="ostaliredovi">2008.</th>
+			 <th class="ostaliredovi">14.000 KM</th>
+			</tr>
+			
+			<tr>
+			 <th class="ostaliredovi">Golf VI</th>
+			 <th class="ostaliredovi">2012.</th>
+			 <th class="ostaliredovi">19.000 KM</th>
+			</tr>
+			
+			<tr class="ostaliredovi">
+			 <th class="ostaliredovi">Škoda Fabia</th>
+			 <th class="ostaliredovi">2005.</th>
+			 <th class="ostaliredovi">8.000 KM</th>
+			</tr>
+			
+			<tr class="ostaliredovi">
+			 <th class="ostaliredovi">Volvo</th>
+			 <th class="ostaliredovi">2002.</th>
+			 <th class="ostaliredovi">11.000 KM</th>
+			</tr>
+			
+			<tr class="ostaliredovi">
+			 <th class="ostaliredovi">Renault Karavan</th>
+			 <th class="ostaliredovi">2004.</th>
+			 <th class="ostaliredovi">7.000 KM</th>
+			</tr>
+			
+			</table>
+			<br><br>
+			</div>
 
 
-</body>
+		<br>
+
+
+	</body>
 
 </html> 

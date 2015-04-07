@@ -4,7 +4,7 @@
 <title>Auto-centar</title>
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="stil.css">
-
+<script src="javascript.js"></script>
 </head>
 
 <body>
@@ -18,7 +18,13 @@
 
 	<ul class="uredi">
 		
-		<li class="uredi2"><a class="uredi3 oznaceno" href="Partneri.html">Partneri</a></li>
+		<li class="uredi2 uredi3 oznaceno" onclick="prikaziMeni()">Partneri
+		
+			<ul id="padajuci" class="nemojPrikazati padajuciMeni" onmouseout="sakrijMeni()">
+						<li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);">Reklama</li>
+					</ul>
+		
+		</li>
 		<li class="uredi2"><a class="uredi3" href="Kontakt.html">Kontakt</a></li>
 		<li class="uredi2"><a class="uredi3" href="Usluge.html">Usluge</a></li>
 		<li class="uredi2"><a class="uredi3" href="Naslovna.html">Naslovna</a></li>
@@ -28,7 +34,8 @@
 	</ul>
 
 
-<br><br><br>
+<br><br><br><br>
+			<br><br>
 <div class="zatvoreno">
 <br>
 <p class="partner">

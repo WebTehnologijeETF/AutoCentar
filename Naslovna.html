@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Auto-centar</title>
-<META http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="stil.css">
+	<head>
+		<title>Auto-centar</title>
+		<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="stil.css">
+		<script src="javascript.js"></script>
+	</head>
 
-</head>
+	<body>
 
-<body>
+		<h1 class="sredina menu"> Auto-centar Sarajevo </h1>
 
-<h1 class="sredina menu"> Auto-centar Sarajevo </h1>
-
-<div class="dodatakNaslovnoj">
-</div>
+		<div class="dodatakNaslovnoj">
+		</div>
 
 
 
-	<ul class="uredi">
-		<li class="uredi2"><a class="uredi3" href="Partneri.html">Partneri</a></li>
-		<li class="uredi2"><a class="uredi3" href="Kontakt.html">Kontakt</a></li>
-		<li class="uredi2"><a class="uredi3" href="Usluge.html">Usluge</a></li>
-		<li class="uredi2"><a class="uredi3 oznaceno" href="Naslovna.html">Naslovna</a></li>
-		
-		
-		
-	</ul>
-	
-	<br>
-	<br>
-	<br>
-	
-	<div class="zatvoreno">
-	<div class="menu">
-	<h1 class="tekstusredinu">Novo u ponudi</h1>
-	<p class="autor tekstusredinu"><b>Autor:</b> Jasmin Mehanović <br><b>Datum:</b> 24.3.2015.</p>
-	<p class="menu tekstusredinu">Poštovani kupci i posjetitelji naše internetske stranice, obaviještavamo vas da je ponuda automobila za prodaju obogaćena novim modelima. Također, od trećeg mjeseca ove godine omogućena je narudžba dijelova za automobile iz drugih zemalja. Ponudu pogledajte klikom na "Usluge" u meniju stranice, a za narudžbu dijelova za automobile pronađite naš kontakt telefon i pozovite nas.<br><br><a class="nemojpodvuci font1" href="">Detaljnije...</a></p>
-	<hr>
-	</div>
+			<ul class="uredi">
+				<li class="uredi2"><a class="uredi3" href="Partneri.html">Partneri</a>
+				</li>
+				<li class="uredi2"><a class="uredi3" href="Kontakt.html">Kontakt</a></li>
+				<li class="uredi2"><a class="uredi3" href="Usluge.html">Usluge</a></li>
+				<li class="uredi2 uredi3 oznaceno" onclick="prikaziMeni()">Naslovna
+				
+					<ul id="padajuci" class="nemojPrikazati padajuciMeni" onmouseout="sakrijMeni()">
+						<li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);">Vijesti</li>
+						<li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);">Poruke</li>
+					</ul>
+					
+				</li>
+				
+				
+				
+			</ul>
+			
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
+			
+			
+			<div class="zatvoreno">
+			<div class="menu">
+			<h1 class="tekstusredinu">Novo u ponudi</h1>
+			<p class="autor tekstusredinu"><b>Autor:</b> Jasmin Mehanović <br><b>Datum:</b> 24.3.2015.</p>
+			<p class="menu tekstusredinu">Poštovani kupci i posjetitelji naše internetske stranice, obaviještavamo vas da je ponuda automobila za prodaju obogaćena novim modelima. Također, od trećeg mjeseca ove godine omogućena je narudžba dijelova za automobile iz drugih zemalja. Ponudu pogledajte klikom na "Usluge" u meniju stranice, a za narudžbu dijelova za automobile pronađite naš kontakt telefon i pozovite nas.<br><br><a class="nemojpodvuci font1" href="">Detaljnije...</a></p>
+			<hr>
+			</div>
 
-	<div class="menu">
-	<h1 class="tekstusredinu">Obaviještenje o izmjeni radnog vremena</h1>
-	<p class="autor tekstusredinu"><b>Autor:</b> Jasmin Mehanović <br><b>Datum:</b> 18.3.2015.</p>
-	<p class="menu tekstusredinu">Obaviještavamo vas kako je radno vrijeme auto salona radnim danima produženo za dva sata. Od 18.3. radimo od 8.00 do 20.00. Vikendom radimo po starom rasporedu, od 8.00 do 18.00.<br><br><a class="nemojpodvuci font1" href="">Detaljnije...</a></p>
-	<hr>
-	</div>
-	
-	
-	
-	<div class="menu">
-	<h1 class="tekstusredinu">Servis za pranje automobila</h1>
-	<p class="autor tekstusredinu"><b>Autor:</b> Amar Memišević <br><b>Datum:</b> 10.3.2015.</p>
-	
-	<img src="pranjeAuta.jpg" alt="" class="pomjeridesno">
-	<p class="menu tekstusredinu">Poštovani kupci, zadovoljstvo nam je obavijestiti vas kako uvodimo i servis za pranje automobila koji se nalazi odmah pored glavne zgrade našeg auto centra. Kompletno pranje automobila po cijeni 10 KM, a samo vanjsko po cijeni od 6 KM. <br><br><a class="nemojpodvuci font1" href="">Detaljnije...</a></p>
-	</div>
-	
-	</div>
-	
-	
-	
-	<div class="slikaDno">
-	<br><br><br><br><br><br><br><br><br><br>
-	<p class="dodatakTekst">    360° perfektno. Iznad standarda. Vozi u budućnost i daj svom <br>automobilu krila. Posjeti auto-centar Sarajevo i uživaj...</p>
-	</div>
-	
-	<form class="idinavrh" action=#>
-    <input type="submit" value="Idi na vrh">
-	</form>
+			<div class="menu">
+			<h1 class="tekstusredinu">Obaviještenje o izmjeni radnog vremena</h1>
+			<p class="autor tekstusredinu"><b>Autor:</b> Jasmin Mehanović <br><b>Datum:</b> 18.3.2015.</p>
+			<p class="menu tekstusredinu">Obaviještavamo vas kako je radno vrijeme auto salona radnim danima produženo za dva sata. Od 18.3. radimo od 8.00 do 20.00. Vikendom radimo po starom rasporedu, od 8.00 do 18.00.<br><br><a class="nemojpodvuci font1" href="">Detaljnije...</a></p>
+			<hr>
+			</div>
+			
+			
+			
+			<div class="menu">
+			<h1 class="tekstusredinu">Servis za pranje automobila</h1>
+			<p class="autor tekstusredinu"><b>Autor:</b> Amar Memišević <br><b>Datum:</b> 10.3.2015.</p>
+			
+			<img src="pranjeAuta.jpg" alt="" class="pomjeridesno">
+			<p class="menu tekstusredinu">Poštovani kupci, zadovoljstvo nam je obavijestiti vas kako uvodimo i servis za pranje automobila koji se nalazi odmah pored glavne zgrade našeg auto centra. Kompletno pranje automobila po cijeni 10 KM, a samo vanjsko po cijeni od 6 KM. <br><br><a class="nemojpodvuci font1" href="">Detaljnije...</a></p>
+			</div>
+			
+			</div>
+			
+			
+			
+			<div class="slikaDno">
+			<br><br><br><br><br><br><br><br><br><br>
+			<p class="dodatakTekst">    360° perfektno. Iznad standarda. Vozi u budućnost i daj svom <br>automobilu krila. Posjeti auto-centar Sarajevo i uživaj...</p>
+			</div>
+			
+			<form class="idinavrh" action=#>
+			<input type="submit" value="Idi na vrh">
+			</form>
 
-</body>
+	</body>
 
 </html> 
