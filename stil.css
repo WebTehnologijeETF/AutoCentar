@@ -4,11 +4,25 @@ hr{
 border-color:red;
 }
 
+.centriraj{
+	text-align:center;
+}
+
+.zatvoreno{
+
+  border: 15px solid transparent;
+    width: 1050px;
+    margin-left:120px;
+	margin-right:120px;
+  border-image: url("test.png") 20 20 round;
+  background-color: #FFEBEB;
+} 
+
 .padajuciMeni{
 	list-style-type: square;
 	text-align:left;
 	color:black;
-	border: 2px solid red; 
+	border: 2px outset red; 
 	
 }
 
@@ -23,6 +37,11 @@ body {
 
 h1 { font-family: 'Special Elite', cursive;
  font-weight: 400; }
+ 
+ .povecaj{
+  font-family: 'Special Elite', cursive;
+ font-weight: 10;
+ }
  
  .dodatakTekst{ font-family: 'Special Elite', cursive;
  font-weight:14; 
@@ -40,9 +59,14 @@ margin-top:-68px;
 
 .prikazi{
 	display:block;
+	font-size:7px;
 }
 
 .nemojPrikazati{
+	display:none;
+}
+
+.nemojPrikazati1{
 	display:none;
 }
 
@@ -147,16 +171,6 @@ margin-left:490px;
 	background-image: url("slikadno.png");
 }
 
-.zatvoreno{
-
-  border: 15px solid transparent;
-    width: 1050px;
-    margin-left:120px;
-	margin-right:120px;
-  border-image: url("test.png") 20 20 round;
-  background-color: #FFEBEB;
-} 
-
 
 .idinavrh{
 	margin-left:600px;
@@ -204,9 +218,7 @@ margin-left:490px;
 	
 }
 
-.centriraj{
-	margin-left:140px;
-}
+
 
 #padajuci{
 	background-color:white;
@@ -221,5 +233,17 @@ margin-left:490px;
 }
 
 body{
- background-color: #D1B2C2;
+
+ 
+
+	background-image: url("http://p1.pichost.me/i/71/1960526.jpg");
+}
+
+#forma{
+}
+
+#drzava{
+}
+
+#grad{
 }

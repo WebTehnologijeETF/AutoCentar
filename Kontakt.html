@@ -19,7 +19,7 @@
 	<ul class="uredi">
 	
 		<li class="uredi2"><a class="uredi3" href="Partneri.html">Partneri</a></li>
-		<li class="uredi2 uredi3 oznaceno" onclick="prikaziMeni()">Kontakt
+		<li class="uredi2 uredi3 oznaceno" onclick="prikaziMeni()" onmouseout="sakrijMeni()">Kontakt
 		
 			<ul id="padajuci" class="nemojPrikazati padajuciMeni" onmouseout="sakrijMeni()">
 						<li onmouseover="prikaziMeni(); oboji(this);" onmouseout="vratiBoju(this);">Adresa</li>
@@ -39,59 +39,52 @@
 	<br>
 
 	
-	<div class="zatvoreno">
-	
-	<div class="partner">
-	<p>Pošaljite nam vaša pitanja, sugestije ili kritike. Odgovaramo u roku od 24 sata.</p><br>
+	<div class="zatvoreno"> 
+	<p class="tekstusredinu povecaj">Pošaljite nam vaša pitanja, sugestije ili kritike. Odgovaramo u roku od 24 sata.</p><br>
+			<div class="tekstusredinu">
+			
 
-	</div>
-	
-	<div class="partner">
-		<form action="action_page.php">
-		Ime i prezime:<br>
-		<input class="hehe" type="text" name="Imeprezime" value="">
+			
+			
+			
+				<form name="mojaForma" action="">
+				Ime i prezime:*<br>
+				<input class="hehe" type="text" name="Imeprezime" required x-moz-errormessage="Unesite ime i prezime odvojeno razmakom">
+				<br>	
+				E-mail:*<br>
+				<input class="hehe" type="text" name="email" required required x-moz-errormessage="Unesite email formata text@domena.com">
+				<br>
+				Telefon:<br>
+				<input class="hehe" type="text" name="telefon" value="">
+				<br>
+				Drzava:*<br>
+					
+						<select id="drzava" name="OdaberiDrzavu" class="hehe1" required required x-moz-errormessage="Izaberite vašu državu">
+						  <option value=""></option>
+						  <option value="BiH">BiH</option>
+						  <option value="Hrvatska">Hrvatska</option>
+						  <option value="Druga">Druga</option>
+						</select>
+						<br>
+						<input type="submit" value="Potvrdi državu" onclick="provjeriGrad()"><br>
+				Grad:*<br>
+					
+						<select id="grad" name="OdaberiGrad" class="hehe1" required required x-moz-errormessage="Izaberite (najbliži) grad (prije toga potvrdite državu klikom na istoimeno dugme)">
+						  <option value=""></option>
+						</select>
+
+
+		<br><br>
+		<textarea required required x-moz-errormessage="Unesite poruku" class="tekstarea" placeholder="Ovdje ukucajte vašu poruku(formular izgleda ispravno u Firefoxu)"></textarea>
+				<p>* - obavezno za popuniti</p>
+
+
+		<input type="submit" value="Pošalji" onclick="provjeriFormu()">
+		</form>		
+		<img class="sugestije" src="sugestije.png" alt="">
 		<br>
-		E-mail:<br>
-		<input class="hehe" type="text" name="email" value="">
-		<br>
-		</form> 
-		Grad:
-			 <form action="action_page.php">
-				<select name="Odaberi" class="hehe1">
-				  <option value="Banja Luka">Banja Luka</option>
-				  <option value="Mostar">Mostar</option>
-				  <option value="Tuzla">Tuzla</option>
-				  <option value="Sarajevo">Sarajevo</option>
-				  <option value="Zenica">Zenica</option>
-				  <option value="Drugi">Drugi</option>
-				</select>
-				</form>
-</div>
-
-<div class="partner">
-<form>
-
-<br>
-<textarea class="tekstarea">Ovdje ukucajte vašu poruku(formular izgleda ispravno u Firefoxu)</textarea>
 		
-</form>
-
-</div>
-
-<br>
-<div>
-<img class="sugestije" src="sugestije.png" alt="">
-<input class="kontaktt" type="submit" value="Pošalji">		
-</div>	
-<br>
-
-<div class="centriraj">
-<hr>
-<p class="partner">Adresa auto centra Sarajevo: Bulevar Meše Selimovića, br. 40.</p>
-<p class="partner">Kontakt telefon: 061/884-269, 033/336-207</p>
-
-</div>
-</div>
+	</div>
 
 
 </body>
