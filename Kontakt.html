@@ -47,7 +47,7 @@
 			
 			
 			
-				<form name="mojaForma" action="">
+				<form name="mojaForma" onsubmit="provjeriFormu(); return false;">
 				Ime i prezime:*<br>
 				<input class="hehe" type="text" name="Imeprezime" required x-moz-errormessage="Unesite ime i prezime odvojeno razmakom">
 				<br>	
@@ -79,7 +79,7 @@
 				<p>* - obavezno za popuniti</p>
 
 
-		<input type="submit" value="Pošalji" onclick="provjeriFormu()">
+		<input type="submit" value="Pošalji">
 		</form>		
 		<img class="sugestije" src="sugestije.png" alt="">
 		<br>

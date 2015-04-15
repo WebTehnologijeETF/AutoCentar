@@ -44,7 +44,7 @@ function provjeriMail(){
 	   if (atpoz < 1 || ( dotpoz - atpoz < 2 )) 
 	   {
 		   alert("Niste unijeli ispravnu e-mail adresu");
-		   document.mojaForma.email.focus() ;
+		   document.mojaForma.email.focus();
 		   return false;
 	   }
    }
@@ -57,10 +57,9 @@ function provjeriTelefon(){
 	else{
 		var tel = document.mojaForma.telefon.value;
 		var telefonRegEx = /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{3})$/;
-		alert("Niste unijeli ispravan broj telefona");
 		if (!telefonRegEx.test(tel)) {
-			greska.innerHTML+="Telefon format: (061)-123-345 ili 061-123-456 ili 061123456<br>";
-			alert("Niste unijeli ispravan broj telefona");
+			alert("Niste unijeli ispravan broj telefona: (061)-123-345 ili 061-123-456 ili 061123456");
+			document.mojaForma.telefon.focus();
 			return false;
 		}
 	}
