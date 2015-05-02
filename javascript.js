@@ -111,3 +111,19 @@ function provjeriGrad(){
 	
 	
 }
+
+function otvoriStranicu(stranica)
+{
+	
+	var ajax = new XMLHttpRequest();
+
+	ajax.onreadystatechange=function(){
+		if(ajax.readyState == 4 && ajax.status == 200) {
+			document.open();
+			document.write(ajax.responseText);
+			document.close();
+		}
+	}
+	ajax.open("GET",stranica, true);
+	ajax.send();
+}

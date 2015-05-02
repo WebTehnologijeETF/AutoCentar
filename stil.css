@@ -15,7 +15,7 @@ border-color:red;
     margin-left:120px;
 	margin-right:120px;
   border-image: url("test.png") 20 20 round;
-  background-color: #FFEBEB;
+   background-color: #FFEBEB;
 } 
 
 .padajuciMeni{
