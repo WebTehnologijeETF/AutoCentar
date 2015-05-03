@@ -30,6 +30,7 @@
 	 
 	x=provjeriMail();
 	y=provjeriTelefon();
+	validirajAjax();
 	if (x==true && y==true)
 	document.forms["mojaForma"].submit();
 		
@@ -127,3 +128,57 @@ function otvoriStranicu(stranica)
 	ajax.open("GET",stranica, true);
 	ajax.send();
 }
+
+function validirajAjax(){
+	var opcina = document.getElementById("ajaxOpcina").value;
+	console.log(opcina);
+	
+	var mjesto = document.getElementById("ajaxMjesto").value;
+	console.log(mjesto);
+	 if (opcina=="" || mjesto=="") return false;
+	 
+	var ajax = new XMLHttpRequest();
+			ajax.onreadystatechange = function() {
+				var odgovor = ajax.responseText;
+				var odgovori = new Array();
+				
+				odgovori=odgovor.split(":");
+				odgovori[0]=odgovori[0].replace('{"greska"', 'greska');
+				if (odgovori[1]=='"Nepostojeća općina"}') odgovori[1]=odgovori[1].replace('"Nepostojeća općina"}', 'Nepostojeća općina');
+				if (odgovori[1]=='"Nepostojeće mjesto"}') odgovori[1]=odgovori[1].replace('"Nepostojeće mjesto"}', 'Nepostojeće mjesto');
+				
+				if (ajax.readyState == 4 && ajax.status == 200)
+                {
+					if (odgovori[0]=="greska"){
+					
+						if (odgovori[1] == "Nepostojeća općina") {
+								document.getElementById("ajaxOpcina").value="Ne postoji unesena opcina";
+							
+                                document.getElementById("ajaxOpcina").style.backgroundColor="#FF9999";
+								document.getElementById("ajaxMjesto").style.backgroundColor="#FF9999";
+								return false;
+                        }  
+						
+						if (odgovori[1] == "Nepostojeće mjesto") {
+                                document.getElementById("ajaxMjesto").style.backgroundColor="#FF9999";
+								document.getElementById("ajaxMjesto").value="Ne postoji uneseno mjesto";
+								return false;
+                        }  
+					}
+					else{
+						document.getElementById("ajaxOpcina").style.backgroundColor="white";
+								document.getElementById("ajaxMjesto").style.backgroundColor="white";
+					}
+                }
+				
+                if (ajax.readyState == 4 && ajax.status == 404){
+					return false;
+				}
+					
+                       
+			}
+			
+			ajax.open("GET", "http://zamger.etf.unsa.ba/wt/mjesto_opcina.php?opcina=" + opcina + "&mjesto=" + mjesto, true);
+			ajax.send();
+ 
+};

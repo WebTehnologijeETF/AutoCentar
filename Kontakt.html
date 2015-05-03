@@ -71,16 +71,27 @@
 					
 						<select id="grad" name="OdaberiGrad" class="hehe1" required required x-moz-errormessage="Izaberite (najbliži) grad (prije toga potvrdite državu klikom na istoimeno dugme)">
 						  <option value=""></option>
-						</select>
+						</select><br><br>
+	
 
-
-		<br><br>
-		<textarea required required x-moz-errormessage="Unesite poruku" class="tekstarea" placeholder="Ovdje ukucajte vašu poruku(formular izgleda ispravno u Firefoxu)"></textarea>
-				<p>* - obavezno za popuniti</p>
-
+		<textarea required  x-moz-errormessage="Unesite poruku" class="tekstarea" placeholder="Ovdje ukucajte vašu poruku(formular izgleda ispravno u Firefoxu)"></textarea>
+				<p>* - obavezno za popuniti</p><br>
+				
 
 		<input type="submit" value="Pošalji">
-		</form>		
+		</form>	
+		<br><br><hr><br><br>
+		
+		<form onsubmit="return false;">
+		Dodatno za ajax validaciju:<br>
+				Općina<br>
+				<input required id="ajaxOpcina" class="hehe" type="text" name="opcina" value=""><br>
+				Mjesto<br>
+				<input required id="ajaxMjesto" class="hehe" type="text" name="mjesto" value=""><br>
+			<input type="submit" onclick="validirajAjax();" value="Submit"> <br>
+		</form>
+
+		
 		<img class="sugestije" src="sugestije.png" alt="">
 		<br>
 		
