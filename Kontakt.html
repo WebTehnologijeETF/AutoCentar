@@ -52,15 +52,15 @@
 				<input class="hehe" type="text" name="Imeprezime" required x-moz-errormessage="Unesite ime i prezime odvojeno razmakom">
 				<br>	
 				E-mail:*<br>
-				<input class="hehe" type="text" name="email" required required x-moz-errormessage="Unesite email formata text@domena.com">
+				<input class="hehe" type="text" name="email" required x-moz-errormessage="Unesite email formata text@domena.com">
 				<br>
 				Telefon:<br>
 				<input class="hehe" type="text" name="telefon" value="">
 				<br>
 				Drzava:*<br>
 					
-						<select id="drzava" name="OdaberiDrzavu" class="hehe1" required required x-moz-errormessage="Izaberite vašu državu">
-						  <option value=""></option>
+						<select id="drzava" name="OdaberiDrzavu" class="hehe1" required x-moz-errormessage="Izaberite vašu državu">
+						  <option value="" disabled selected>Izaberite vašu državu</option>
 						  <option value="BiH">BiH</option>
 						  <option value="Hrvatska">Hrvatska</option>
 						  <option value="Druga">Druga</option>
@@ -69,8 +69,8 @@
 						<input type="submit" value="Potvrdi državu" onclick="provjeriGrad()"><br>
 				Grad:*<br>
 					
-						<select id="grad" name="OdaberiGrad" class="hehe1" required required x-moz-errormessage="Izaberite (najbliži) grad (prije toga potvrdite državu klikom na istoimeno dugme)">
-						  <option value=""></option>
+						<select id="grad" name="OdaberiGrad" class="hehe1" required x-moz-errormessage="Izaberite (najbliži) grad (prije toga potvrdite državu klikom na istoimeno dugme)">
+						   <option value="" disabled selected>Izaberite vaš grad</option>
 						</select><br><br>
 	
 
@@ -95,6 +95,7 @@
 		<img class="sugestije" src="sugestije.png" alt="">
 		<br>
 		
+	</div>
 	</div>
 
 

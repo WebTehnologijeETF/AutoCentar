@@ -39,6 +39,8 @@
 			<br><br>
 			
 			<div class="zatvoreno">
+			
+			
 			<br>
 			<p class="menu tekstusredinu">Auto centar Sarajevo nudi profesionalne usluge po najpovoljnijim cijenama u gradu. Naši radnici će se potruditi uslužiti vas u najkraćem mogućem vremenskom periodu. Centar se nalazi u blizini RTV doma i prilaz istom je jako pristupačan. Mi smo najpovoljniji, najbrži i najljubazniji.</p><br>
 			<p class="menu tekstusredinu">Sve potrebne informacije (kontakt, telefona, adresa) pronađite klikom na KONTAKT u glavnom meniju naše internetske stranice. Na sva vaša pitanja odgovaramo najbrže što je moguće, a obećavamo direktan i konkretan odgovor kroz najdalje 24 sata.</p>
@@ -94,6 +96,65 @@
 			
 			</table>
 			<br><br>
+			<hr>
+			<br>
+			
+			<table id="tabelaDodavanje" class="partner" border=1>
+			<p class="tekstusredinu">***Administrator može dodati i izbrisati proizvode u sljedećoj tabeli***</p><br>
+			<tr class="prvired">
+			 <th>ID</th>
+			 <th>Naziv</th>
+			 <th>Slika</th>
+			 <th>Opis</th>
+			</tr>
+			
+			
+			</table><br>
+			<form class="tekstusredinu" onsubmit="return false;">
+			<input type="submit" onclick="ucitaj();" value="Osvježi tabelu"> <br>
+			</form>
+			<br>
+			<hr>
+			<br>
+			
+			<form class="tekstusredinu" onsubmit="return false;">
+				
+				Dodavanje u tabelu:<br>
+			    Naziv<br>
+				<input id="nazivProizvodaID" class="hehe" type="text" name="nazivProizvoda" value=""><br>
+				Opis<br>
+				<input id="opisProizvodaID" class="hehe" type="text" name="opisProizvoda" value=""><br>
+				SlikaURL<br>
+				<input id="slikaURLID" class="hehe" type="text" name="slikaURL" value=""><br>
+				<input type="submit" onclick="dodajProizvod();" value="Dodaj proizvod u tabelu"> <br>
+			</form>
+			<hr><br>
+			
+			<form class="tekstusredinu" onsubmit="return false;">
+			Brisanje iz tabele<br>
+			    ID proizvoda<br>
+				<input required id="nazivBrisanje" class="hehe" type="text" name="nazivProizvodaBrisanje" value=""><br>
+				<input type="submit" onclick="obrisiProizvod();" value="Izbrisi proizvod"> <br>
+			</form>
+			
+			<hr>
+			<br>
+			
+			<form class="tekstusredinu" onsubmit="return false;">
+				
+				Izmjena u tabeli:<br>
+				ID<br>
+				<input required id="IDizmijeni" class="hehe" type="text" name="IDProizvoda" value=""><br>
+			    Naziv<br>
+				<input required id="nazivIzmijeni" class="hehe" type="text" name="nazivProizvoda" value=""><br>
+				Opis<br>
+				<input required id="opisIzmijeni" class="hehe" type="text" name="opisProizvoda" value=""><br>
+				SlikaURL<br>
+				<input required id="slikaIzmijeni" class="hehe" type="text" name="slikaURL" value=""><br>
+				<input type="submit" onclick="izmijeniProizvod();" value="Izmijeni proizvod"> <br>
+			</form>
+			<hr><br>
+			
 			</div>
 
 
