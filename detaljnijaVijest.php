@@ -49,6 +49,7 @@
 			<div class="tekstusredinu">
 			
 			<?php
+			//include 'Naslovna.php';
 			   session_start();
 			   //echo "Sesija je: " . $_SESSION['datum'];
 				$log_directory = 'novosti';
@@ -74,9 +75,13 @@
 					$naziv=$novost . $value;
 					
 					 $fp = fopen($naziv, "r");
-					 $brojac=1;
-					 if ($_SESSION['datum']==fgets($fp)){
-						 echo $_SESSION['datum'];
+					 $brojac=0;
+					 $line=fgets($fp);
+					 if ($_SESSION['nazivFajla']==$value){
+						 //echo $_SESSION['nazivFajla']. "haha";
+						 //if ($nazivFajla==$value){
+							 echo "Datum: ". $line;
+						 
 						 echo "<br>";
 						 while (!feof($fp)){
 							$line = fgets($fp);
@@ -107,6 +112,7 @@
 							continue;
 						}
 						echo $line ."<br>";
+						$brojac++;
 						
 					 }
 					 
@@ -116,6 +122,7 @@
 				}	
 			?>
 			</div>
+			<hr>
 			
 			<div class="slikaDno">
 			<br><br><br><br><br><br><br><br><br><br>

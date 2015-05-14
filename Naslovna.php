@@ -43,26 +43,22 @@
 			<br>
 			
 			<div class="zatvoreno">
-			<div class="menu">
 			
-			<h1 class="tekstusredinu">Novo u ponudi</h1>
-			<p class="autor tekstusredinu"><b>Autor:</b> Jasmin Mehanović <br><b>Datum:</b> 24.3.2015.</p>
-			<p class="menu tekstusredinu">Poštovani kupci i posjetitelji naše internetske stranice, obaviještavamo vas da je ponuda automobila za prodaju obogaćena novim modelima. Također, od trećeg mjeseca ove godine omogućena je narudžba dijelova za automobile iz drugih zemalja. Ponudu pogledajte klikom na "Usluge" u meniju stranice, a za narudžbu dijelova za automobile pronađite naš kontakt telefon i pozovite nas.<br><br><a class="nemojpodvuci font1" href="">Detaljnije...</a></p>
-			<hr>
-			</div>
 			
 			<div class="tekstusredinu">
 			
 			<?php
 			session_start();
-			  
+			  //$_SESSION['nazivFajla'];
 				$log_directory = 'novosti';
 
 				$results_array = array();
-				
+				$nizDatuma = array();
+				//$indexTekst=0;
+				//$nazivFajla;
 				//Open directory
 				$dir = dir("novosti");
-
+				$novost='novosti/';
 				//List files in directory
 				while (($file = $dir->read()) !== false){
 					//da li je .txt fajl
@@ -72,11 +68,50 @@
 				}
 				$dir->close();
 				
-				$novost='novosti/';
+				
+				//niz datuma svih objava
 				foreach($results_array as $value)
 				{
-					
 					$naziv=$novost . $value;
+					$fp = fopen($naziv, "r");
+					$nizDatuma[] = fgets($fp);
+					fclose($fp);
+				}
+				
+				
+				//poredaj po vremenu objave
+				for ($j=0; $j < count($results_array); $j++) { 
+						for ($k=$j+1; $k < count($results_array); $k++) { 
+						//echo date('r', strtotime($nizDatuma[$j]));
+						//if (strtotime($nizDatuma[$j])==false){
+							if(strtotime($nizDatuma[$j])<strtotime($nizDatuma[$k])){
+								$fp = fopen("novosti/".$results_array[$k], "r");
+								$fpp = fopen("novosti/".$results_array[$j], "r");
+								$temp=$results_array[$j];
+								$results_array[$j]=$results_array[$k];
+								$results_array[$k]=$temp;
+								fclose($fp);
+								fclose($fpp);
+							}
+
+							
+														
+						}
+				}
+				
+				/*//ispisi datume
+				for ($j=0; $j<count($results_array); $j++)
+				{
+					echo $nizDatuma[$j];
+					echo "<br>";
+				}*/
+				
+				//foreach($results_array as $value)
+				for ($j=0; $j<count($results_array); $j++)
+				{
+					//$niz[$indexTekst]=$value;
+					//$indexTekst++;
+					$naziv=$novost . $results_array[$j];
 					
 					 $fp = fopen($naziv, "r");
 					 $brojac=0;
@@ -85,7 +120,7 @@
 						$line = fgets($fp);
 						
 						if ($brojac==0){
-							$_SESSION['datum'] = $line;
+							//$_SESSION['datum'] = $line;
 							echo "Datum: ";
 						}
 						if ($brojac==1){
@@ -114,7 +149,7 @@
 							if ($line!=""){ 
 							if ($brojac==8){
 								echo "<br>";
-								?> <a style="background-color: red" onclick="otvoriStranicu('detaljnijaVijest.php')">Detaljnije</a> <?php
+								?> <a style="background-color: red" onclick="otvoriStranicu('detaljnijaVijest.php'); <?php $_SESSION['nazivFajla']=$value; ?>">Detaljnije</a> <?php
 							}
 							continue; }
 						}
