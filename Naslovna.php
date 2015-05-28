@@ -48,7 +48,104 @@
 			<div class="tekstusredinu">
 			
 			<?php
+			
 			session_start();
+			
+			$veza = new PDO("mysql:dbname=wt;host=localhost;charset=utf8", "wt8user", "wt8pass");
+			 $veza->exec("set names utf8");
+			 $rezultat = $veza->query("select id, datum, autor, naslov, tekst, slika, detaljno from novosti order by datum");
+			 if (!$rezultat) {
+				  $greska = $veza->errorInfo();
+				  print "SQL greška: " . $greska[2];
+				  exit();
+			 }
+	 
+	  foreach ($rezultat as $novosti) {
+		 $tekst=$novosti['tekst'];
+		 $autor=$novosti['autor'];
+		 $naslov=$novosti['naslov'];
+		 $slika=$novosti['slika'];
+		 $datum=$novosti['datum'];
+		 $detaljno=$novosti['detaljno'];
+		 
+		 print "<h1>$naslov</h1>";
+		 print "Datum: $datum";
+		 echo "<br>";
+		 print "Autor: $autor";
+		 echo "<br><br>";
+		 ?> <img src='<?= $slika ?>'> <br> <?php
+		 echo "<br><br>";
+		 print "$tekst";
+		 echo "<br><br>";
+		 if ($detaljno!=""){
+			 ?>
+			 <a style="background-color: red" onclick="otvoriStranicu('detaljnijaVijest.php'); <?php $_SESSION['nazivFajla']=$naslov; ?>">Detaljnije</a>
+			 <?php
+		 }
+		 echo "<br><br>";
+		  
+		  
+		  $tid=$novosti['id'];
+          $rezultatt=$veza->prepare("select COUNT(*) FROM komentari WHERE novosti=$tid");
+          $rezultatt->execute();
+          $broj = $rezultatt->fetchColumn();
+		  
+		  $rezultattt=$veza->prepare("select novosti, email, tekst, autor, vrijeme FROM komentari WHERE novosti=$tid");
+          $rezultattt->execute();
+         
+
+          if(!$broj)
+            print "<small> Nema komentara </small>";
+
+            else print "<a href=\"Naslovna.php?id=$tid\"> $broj komentara  </a>";
+			echo "<br><br>";
+			foreach ($rezultattt as $k){
+				$komentar=$k['tekst'];
+				$ime=$k['autor'];
+				$mail=$k['email'];
+				$dat=$k['vrijeme'];
+				print "$dat $ime $mail ";
+				echo "<br>";
+				print "Komentar: $komentar";
+				echo "<br><br>";
+			}
+		  
+		   echo "<br><br>";
+		   
+		  
+		   
+		  ?>
+		  
+		  
+		  
+		   <form action="" method="get">
+		   <h2>Ostavi svoj komentar</h2><br>
+			Ime:*<br>
+			<input class="hehe" type="text" name="Imeprezime" required x-moz-errormessage="Unesite ime i prezime odvojeno razmakom">
+			<br>	
+			E-mail:<br>
+			<input class="hehe" type="text" name="email">
+			<br>
+			Komentar<br>
+			<input class="hehe" type="text" name="komentar" required x-moz-errormessage="Unesite komentar">
+			<br>
+			
+			<input type="submit" value="Pošalji komentar" name="dodaj"><br>
+		  </form>
+		 <?php
+		 print "<hr>";
+	  }
+	  
+	   if(isset($_REQUEST['dodaj'])){
+				$autt=$_REQUEST['Imeprezime'];
+				$eemail=$_REQUEST['email'];
+			  $komm=$_REQUEST['komentar'];
+				$sql= $veza->query("INSERT INTO komentari SET novosti='$tid', email='$eemail', tekst='$komm', autor='$autt'");
+  }			//	$sql= $veza->query("INSERT INTO komentar SET vijest=1, tekst='$komm', autor='$autt'");
+			
+			
+			
+			/*session_start();
 			  //$_SESSION['nazivFajla'];
 				$log_directory = 'novosti';
 
@@ -97,7 +194,7 @@
 							
 														
 						}
-				}
+				}*/
 				
 				/*//ispisi datume
 				for ($j=0; $j<count($results_array); $j++)
@@ -106,7 +203,7 @@
 					echo "<br>";
 				}*/
 				
-				//foreach($results_array as $value)
+				/*//foreach($results_array as $value)
 				for ($j=0; $j<count($results_array); $j++)
 				{
 					//$niz[$indexTekst]=$value;
@@ -161,7 +258,7 @@
 					 fclose($fp);
 					 //echo "SESIJA JE: " . $_SESSION['datum'];
 					?> <hr> <?php
-				}	
+				}	*/
 			?>
 			</div>
 			

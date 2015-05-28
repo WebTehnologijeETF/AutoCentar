@@ -49,7 +49,46 @@
 			<div class="tekstusredinu">
 			
 			<?php
-			//include 'Naslovna.php';
+			
+			session_start();
+			
+			$veza = new PDO("mysql:dbname=wt;host=localhost;charset=utf8", "wt8user", "wt8pass");
+			 $veza->exec("set names utf8");
+			 $rezultat = $veza->query("select datum, autor, naslov, tekst, slika, detaljno from novosti order by datum");
+			 if (!$rezultat) {
+				  $greska = $veza->errorInfo();
+				  print "SQL greška: " . $greska[2];
+				  exit();
+			 }
+			 
+			 foreach ($rezultat as $novosti) {
+				
+					 $tekst=$novosti['tekst'];
+					 $autor=$novosti['autor'];
+					 $naslov=$novosti['naslov'];
+					 $slika=$novosti['slika'];
+					 $datum=$novosti['datum'];
+					 $detaljno=$novosti['detaljno'];
+					 //if ($_SESSION['nazivFajla']==$value){
+				if ($_SESSION['nazivFajla']==$naslov){
+					 print "<h1>$naslov</h1>";
+					 print "Datum: $datum";
+					 echo "<br>";
+					 print "Autor: $autor";
+					 echo "<br><br>";
+					 ?> <img src='<?= $slika ?>'> <br> <?php
+					 echo "<br><br>";
+					 print "$tekst";
+					 echo "<br>";
+					 print "$detaljno";
+				 }
+				 
+		}
+		
+			 
+			 
+			
+			/*//include 'Naslovna.php';
 			   session_start();
 			   //echo "Sesija je: " . $_SESSION['datum'];
 				$log_directory = 'novosti';
@@ -119,7 +158,7 @@
 					 fclose($fp);
 					 }
 					 
-				}	
+				}	*/
 			?>
 			</div>
 			<hr>
